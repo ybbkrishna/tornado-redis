@@ -1119,7 +1119,7 @@ class ServerCommandsTestCase(RedisTestCase):
             self.assertEqual(len(res), 2)
             cursor, keys = res
             self.assertTrue(isinstance(cursor, int))
-            self.assertTrue(isinstance(keys, set))
+            self.assertTrue(isinstance(keys, dict))
             all_keys.update(keys)
         for i in range(SCAN_BUF_SIZE):
             self.assertTrue('test{0}'.format(i) in all_keys)
